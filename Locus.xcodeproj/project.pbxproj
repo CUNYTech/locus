@@ -17,6 +17,7 @@
 		55EBA3C81DAD611000D4F806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3C61DAD611000D4F806 /* Main.storyboard */; };
 		55EBA3CA1DAD611000D4F806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3C91DAD611000D4F806 /* Assets.xcassets */; };
 		55EBA3CD1DAD611000D4F806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3CB1DAD611000D4F806 /* LaunchScreen.storyboard */; };
+		E11ECDD51DDA9C5000736637 /* ImageAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11ECDD41DDA9C5000736637 /* ImageAddition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		55EBA3C91DAD611000D4F806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55EBA3CC1DAD611000D4F806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55EBA3CE1DAD611000D4F806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E11ECDD41DDA9C5000736637 /* ImageAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAddition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		55EBA3BF1DAD611000D4F806 /* Locus */ = {
 			isa = PBXGroup;
 			children = (
+				E11ECDD41DDA9C5000736637 /* ImageAddition.swift */,
 				557C6A361DB57270007ED9CE /* LocationSearchTable.swift */,
 				55EBA3C01DAD611000D4F806 /* AppDelegate.swift */,
 				55EBA3C21DAD611000D4F806 /* FirstViewController.swift */,
@@ -157,6 +160,7 @@
 				55EBA3C11DAD611000D4F806 /* AppDelegate.swift in Sources */,
 				55090BD91DBEC28D00258CE1 /* NotesListTableViewController.swift in Sources */,
 				55EBA3C31DAD611000D4F806 /* FirstViewController.swift in Sources */,
+				E11ECDD51DDA9C5000736637 /* ImageAddition.swift in Sources */,
 				557C6A371DB57270007ED9CE /* LocationSearchTable.swift in Sources */,
 				55090BD81DBEC28D00258CE1 /* NoteDetailViewController.swift in Sources */,
 			);
