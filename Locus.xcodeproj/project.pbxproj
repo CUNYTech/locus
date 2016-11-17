@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491A5F861DDC04B900D8B64E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A5F851DDC04B900D8B64E /* RegisterViewController.swift */; };
+		491A5F881DDC04C600D8B64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A5F871DDC04C600D8B64E /* LoginViewController.swift */; };
 		55090BD51DBEC27D00258CE1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090BD41DBEC27D00258CE1 /* Note.swift */; };
 		55090BD81DBEC28D00258CE1 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090BD61DBEC28D00258CE1 /* NoteDetailViewController.swift */; };
 		55090BD91DBEC28D00258CE1 /* NotesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090BD71DBEC28D00258CE1 /* NotesListTableViewController.swift */; };
@@ -17,10 +19,15 @@
 		55EBA3C81DAD611000D4F806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3C61DAD611000D4F806 /* Main.storyboard */; };
 		55EBA3CA1DAD611000D4F806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3C91DAD611000D4F806 /* Assets.xcassets */; };
 		55EBA3CD1DAD611000D4F806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3CB1DAD611000D4F806 /* LaunchScreen.storyboard */; };
+		7EC5F99C53C96631621CCDF5 /* Pods_Locus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFB4CD077F7DA3ACD60A9C7 /* Pods_Locus.framework */; };
 		E11ECDD51DDA9C5000736637 /* ImageAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11ECDD41DDA9C5000736637 /* ImageAddition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BFB4CD077F7DA3ACD60A9C7 /* Pods_Locus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Locus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36F6AA631C7B4F205DF38E72 /* Pods-Locus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Locus/Pods-Locus.debug.xcconfig"; sourceTree = "<group>"; };
+		491A5F851DDC04B900D8B64E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		491A5F871DDC04C600D8B64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		55090BD41DBEC27D00258CE1 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		55090BD61DBEC28D00258CE1 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		55090BD71DBEC28D00258CE1 /* NotesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListTableViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +41,7 @@
 		55EBA3CC1DAD611000D4F806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55EBA3CE1DAD611000D4F806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E11ECDD41DDA9C5000736637 /* ImageAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAddition.swift; sourceTree = "<group>"; };
+		F0177EFDE5ABBC9DAB135AC2 /* Pods-Locus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Locus/Pods-Locus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC5F99C53C96631621CCDF5 /* Pods_Locus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0366D7A2C86C5BA5B3A3365D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BFB4CD077F7DA3ACD60A9C7 /* Pods_Locus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41FBD6E5BF2B7282D3680EA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36F6AA631C7B4F205DF38E72 /* Pods-Locus.debug.xcconfig */,
+				F0177EFDE5ABBC9DAB135AC2 /* Pods-Locus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		55EBA3B41DAD611000D4F806 = {
 			isa = PBXGroup;
 			children = (
 				55EBA3BF1DAD611000D4F806 /* Locus */,
 				55EBA3BE1DAD611000D4F806 /* Products */,
+				41FBD6E5BF2B7282D3680EA2 /* Pods */,
+				0366D7A2C86C5BA5B3A3365D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +103,8 @@
 				55090BD71DBEC28D00258CE1 /* NotesListTableViewController.swift */,
 				55EBA3C41DAD611000D4F806 /* SecondViewController.swift */,
 				55EBA3C61DAD611000D4F806 /* Main.storyboard */,
+				491A5F851DDC04B900D8B64E /* RegisterViewController.swift */,
+				491A5F871DDC04C600D8B64E /* LoginViewController.swift */,
 				55EBA3C91DAD611000D4F806 /* Assets.xcassets */,
 				55EBA3CB1DAD611000D4F806 /* LaunchScreen.storyboard */,
 				55EBA3CE1DAD611000D4F806 /* Info.plist */,
@@ -89,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55EBA3D11DAD611000D4F806 /* Build configuration list for PBXNativeTarget "Locus" */;
 			buildPhases = (
+				77718C280840D05927443017 /* [CP] Check Pods Manifest.lock */,
 				55EBA3B91DAD611000D4F806 /* Sources */,
 				55EBA3BA1DAD611000D4F806 /* Frameworks */,
 				55EBA3BB1DAD611000D4F806 /* Resources */,
+				6DB161A0599161D60B811721 /* [CP] Embed Pods Frameworks */,
+				BBA94FD39C3A8E2FE0F63E40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -109,12 +142,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Elizabeth Kelly";
 				TargetAttributes = {
 					55EBA3BC1DAD611000D4F806 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = XGRPCUVLML;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,11 +182,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6DB161A0599161D60B811721 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Locus/Pods-Locus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77718C280840D05927443017 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BBA94FD39C3A8E2FE0F63E40 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Locus/Pods-Locus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55EBA3B91DAD611000D4F806 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491A5F861DDC04B900D8B64E /* RegisterViewController.swift in Sources */,
 				55090BD51DBEC27D00258CE1 /* Note.swift in Sources */,
 				55EBA3C51DAD611000D4F806 /* SecondViewController.swift in Sources */,
 				55EBA3C11DAD611000D4F806 /* AppDelegate.swift in Sources */,
@@ -162,6 +243,7 @@
 				55EBA3C31DAD611000D4F806 /* FirstViewController.swift in Sources */,
 				E11ECDD51DDA9C5000736637 /* ImageAddition.swift in Sources */,
 				557C6A371DB57270007ED9CE /* LocationSearchTable.swift in Sources */,
+				491A5F881DDC04C600D8B64E /* LoginViewController.swift in Sources */,
 				55090BD81DBEC28D00258CE1 /* NoteDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +288,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -256,6 +339,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -283,26 +367,32 @@
 		};
 		55EBA3D21DAD611000D4F806 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36F6AA631C7B4F205DF38E72 /* Pods-Locus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XGRPCUVLML;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Locus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = EK.Locus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Locus-Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		55EBA3D31DAD611000D4F806 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0177EFDE5ABBC9DAB135AC2 /* Pods-Locus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XGRPCUVLML;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Locus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = EK.Locus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Locus-Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
