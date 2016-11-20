@@ -2,7 +2,9 @@
 # L O C U S
 An app to visually chronologize and organize travel anecdotes for the modern explorer.
 
-<strong>Instructions</strong>
+# Instructions
+=================
+```
 
 # Make sure you have your Xcode installed.
 
@@ -20,4 +22,5 @@ pod install
 
 # Click on compile and run
 
+```
 Voila, Cheers! :beer:
