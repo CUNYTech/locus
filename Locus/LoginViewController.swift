@@ -8,12 +8,22 @@
 
 import UIKit
 import AFNetworking
+import SwiftyJSON
+import SwiftValidator
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, ValidationDelegate {
 
+    let validator = Validator()
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
+    var errorCode: Bool!
+    var message: String = ""
     @IBAction func LoginButton(_ sender: Any) {
+        //validator fields
+        validator.validate(self)
+      }
+    
+    func validationSuccessful() {
         
         //run a spinner to show a task in progress
         let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x:0, y:0, width:150, height:150)) as UIActivityIndicatorView
@@ -26,7 +36,7 @@ class LoginViewController: UIViewController {
         ]
         
         //Serialization error handling
-        var error: NSError?
+        var error: Error?
         do {
             let data = try JSONSerialization.data(withJSONObject: dictionary, options:[])
             let dataString = String(data: data, encoding: String.Encoding.utf8)!
@@ -42,27 +52,53 @@ class LoginViewController: UIViewController {
         //stop the spinner
         spinner.stopAnimating()
         manager.post(urlString, parameters: parameters, progress: nil,
-            success:
+                     success:
             {
-                URLSessionTask, response in
+                (task: URLSessionTask, response: Any!) in
                 
                 //stop the spinner
                 spinner.stopAnimating()
                 let result = NSString(data: (response as! NSData) as Data, encoding: String.Encoding.utf8.rawValue)!
-                    let alert = UIAlertController(title: "Success", message:
-                        "Successfuly Logged in", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                
                 print(result)
-            },
-            failure:
+                //parse json with SwiftyJSON
+                let json = JSON(data: response as! Data)
+                self.errorCode = json["error"].bool!
+                self.message = json["message"].stringValue
+                
+                //show error alert
+                if (!self.errorCode) {
+                    self.performSegue(withIdentifier: "logged_in", sender: self)
+                } else {
+                    let alert = UIAlertController(title: "Failed", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                    let failedAlert = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                    alert.addAction(failedAlert)
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+        },
+                     failure:
             {
-                URLSessionTask, error in
-            })
+                (task: URLSessionDataTask?, error: Error?) in
+        })
+
+    }
+    
+    func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        // turn the fields to red
+        for (field, error) in errors {
+            if let field = field as? UITextField {
+                field.layer.borderColor = UIColor.red.cgColor
+                field.layer.borderWidth = 1.0
+            }
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.isHidden = false
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "logged_in") {
+            return false
+        }
         return true
     }
 
@@ -70,6 +106,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //set rules for text fields
+        validator.registerField(EmailTextField, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
+        validator.registerField(PasswordTextField, rules: [RequiredRule(), PasswordRule(message: "Password requirements not met")])
     }
 
     override func didReceiveMemoryWarning() {
