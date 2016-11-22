@@ -9,14 +9,23 @@
 import UIKit
 import AFNetworking
 import SwiftyJSON
+import SwiftValidator
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, ValidationDelegate {
 
+    let validator = Validator()
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var RepeatPassTextField: UITextField!
-    //var errorCode: Bool? = nil
+    var errorCode: Bool!
+    var message: String = ""
     @IBAction func RegisterButton(_ sender: Any) {
+        //validator fields
+        validator.validate(self)
+    }
+    
+    // Implement the Validation Delegate
+    func validationSuccessful() {
         //password verification
         if (PasswordTextField.text != RepeatPassTextField.text) {
             let alertController = UIAlertController(title: "Password", message:
@@ -35,7 +44,7 @@ class RegisterViewController: UIViewController {
             ]
             
             //Serialization error handling
-            var error: NSError?
+            let error: Error?
             do {
                 let data = try JSONSerialization.data(withJSONObject: dictionary, options:[])
                 let dataString = String(data: data, encoding: String.Encoding.utf8)!
@@ -47,60 +56,83 @@ class RegisterViewController: UIViewController {
             //post method
             let parameters = dictionary
             let manager = AFHTTPSessionManager()
+            manager.requestSerializer = AFHTTPRequestSerializer()
             manager.responseSerializer = AFHTTPResponseSerializer()
             //stop the spinner
             spinner.stopAnimating()
-            manager.post(urlString, parameters: parameters,
-                success:
+            manager.post(urlString, parameters: parameters, progress: nil,
+                         success:
                 {
-                    responseOperation, response in
+                    (task: URLSessionTask, response: Any!) in
                     
                     //stop the spinner
                     spinner.stopAnimating()
-                    let alert = UIAlertController(title: "Success", message:
-                        "Signed Up", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                    
                     let result = NSString(data: (response as! NSData) as Data, encoding: String.Encoding.utf8.rawValue)!
-                    
-                    //print(message)
                     print(result)
-                },
-                failure:
-                {
                     
-                    responseOperation, error in
+                    //parse json with SwiftyJSON
+                    let json = JSON(data: response as! Data)
+                    self.errorCode = json["error"].bool!
+                    self.message = json["message"].stringValue
+                    
+                    //show alerts
+                    switch (self.errorCode) {
+                    case false:
+                        //success animation
+                        let alert = UIAlertController(title: "Success", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                        let successAlert = UIAlertAction(title: "Dismiss", style: .default, handler: {
+                            action in self.performSegue(withIdentifier: "logged_in", sender: self)
+                        })
+                        alert.addAction(successAlert)
+                        self.present(alert, animated: true, completion: nil)
+                        break
+                    case true:
+                        //error message
+                        let alert = UIAlertController(title: "Failed", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                        let failedAlert = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                        alert.addAction(failedAlert)
+                        self.present(alert, animated: true, completion: nil)
+                        break
+                    default:
+                        ()
+                    }
+                    
+            },
+                         failure:
+                {
+                    (task: URLSessionDataTask?, error: Error?) in
             })
             
         }
-        
+
     }
     
-    /*override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if(identifier == "logged_in") {
-            //return errorCode!
-            /*switch(errorCode) {
-            case true:
-                return true
-                break
-            case false:
-                return false
-                break
-            }*/
-            let alert = UIAlertController(title: "Success", message:
-                "Signed Up", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            self.present(alert, animated: true, completion: nil)
+    func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        // turn the fields to red
+        for (field, error) in errors {
+            if let field = field as? UITextField {
+                field.layer.borderColor = UIColor.red.cgColor
+                field.layer.borderWidth = 1.0
+            }
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.isHidden = false
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "logged_in") {
+            return false
         }
         return true
-    }*/
-
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //set rules for text fields
+        validator.registerField(EmailTextField, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
+        validator.registerField(PasswordTextField, rules: [RequiredRule(), PasswordRule(message: "Password requirements not met")])
     }
 
     override func didReceiveMemoryWarning() {

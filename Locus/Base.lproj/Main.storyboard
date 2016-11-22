@@ -253,7 +253,7 @@
         <scene sceneID="Fz4-Av-6Gy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oV9-Hl-IX4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="E2A0D185-2DD9-4816-94E8-DF1CC4709ECC" id="Ytp-ei-eQY"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="94809CC7-A37E-4740-BE82-257D2496D1E1" id="Ytp-ei-eQY"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjO-2Y-NPl">
@@ -495,7 +495,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LoginButton:" destination="wNB-6Y-zLt" eventType="touchUpInside" id="R2o-JJ-RST"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="logged_in" id="piC-Mr-Pif"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="0X3-Xc-z2R">
@@ -509,11 +508,12 @@
                     <connections>
                         <outlet property="EmailTextField" destination="LxF-7s-IhM" id="t9a-Du-Yyw"/>
                         <outlet property="PasswordTextField" destination="JhM-T7-pbJ" id="cSd-xj-xNP"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="logged_in" id="JbY-1v-yib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8P-e8-8eT" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1249" y="0.0"/>
+            <point key="canvasLocation" x="-1250" y="0.0"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="KyA-vv-Vsy">
@@ -605,8 +605,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="RegisterButton:" destination="Nfb-Zb-k5E" eventType="touchUpInside" id="B5V-gV-XDT"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="logged_in" id="a9D-0G-sRX"/>
+                                    <action selector="RegisterButton:" destination="Nfb-Zb-k5E" eventType="touchUpInside" id="h5V-uM-Pba"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="tiA-Z7-0VF">
@@ -623,6 +622,7 @@
                         <outlet property="EmailTextField" destination="Ln0-Xp-6TC" id="7C8-bM-Wn5"/>
                         <outlet property="PasswordTextField" destination="GRK-fv-Qqz" id="1tI-fc-vKQ"/>
                         <outlet property="RepeatPassTextField" destination="pta-nm-q2c" id="AWv-Xn-Onm"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="logged_in" id="dxU-av-r6r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ube-My-aJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -631,7 +631,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E2A0D185-2DD9-4816-94E8-DF1CC4709ECC" width="30" height="30">
+        <image name="94809CC7-A37E-4740-BE82-257D2496D1E1" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTE1YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ERYbHCgpKi41Njs+QUZJVSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05T
@@ -693,9 +693,9 @@ AABQAAAAAAAAAAAAAAAAAAALvw
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a9D-0G-sRX"/>
-        <segue reference="xj2-vi-kTL"/>
         <segue reference="Xp5-MV-aEA"/>
+        <segue reference="xj2-vi-kTL"/>
+        <segue reference="JbY-1v-yib"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68235294120000001" green="0.7725490196" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
