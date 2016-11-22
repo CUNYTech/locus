@@ -1,4 +1,4 @@
-![image](/locus/blob/master/LoginReg/readMeimage.png)
+![image](https://github.com/CUNYTech/locus/blob/master/LoginReg/readMeimage.png)
 # L O C U S
 An app to visually chronologize and organize travel anecdotes for the modern explorer.
 
