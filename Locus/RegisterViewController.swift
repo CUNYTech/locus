@@ -10,15 +10,20 @@ import UIKit
 import AFNetworking
 import SwiftyJSON
 import SwiftValidator
+import AMPopTip
 
 class RegisterViewController: UIViewController, ValidationDelegate {
 
-    let validator = Validator()
+    var validator = Validator()
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var RepeatPassTextField: UITextField!
     var errorCode: Bool!
     var message: String = ""
+    var popTip = AMPopTip()
+    var appearance = AMPopTip.appearance()
+    var popTipColor = UIColor(red: 1, green: 175/255, blue: 155/255, alpha: 1)
+    
     @IBAction func RegisterButton(_ sender: Any) {
         //validator fields
         validator.validate(self)
@@ -118,6 +123,7 @@ class RegisterViewController: UIViewController, ValidationDelegate {
             error.errorLabel?.isHidden = false
         }
     }
+
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == "logged_in") {
@@ -133,11 +139,21 @@ class RegisterViewController: UIViewController, ValidationDelegate {
         //set rules for text fields
         validator.registerField(EmailTextField, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
         validator.registerField(PasswordTextField, rules: [RequiredRule(), PasswordRule(message: "Password requirements not met")])
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        // Instruction for password
+        appearance.popoverColor = self.popTipColor
+        popTip.showText("Password must be at least 8 characters long and with at least one Uppercase letter!", direction: AMPopTipDirection.up, maxWidth: 260, in: self.view, fromFrame:PasswordTextField.frame, duration: 3)
     }
     
 

@@ -9,4 +9,5 @@ target 'Locus' do
   pod 'AFNetworking', '~> 3.0'
   pod 'SwiftyJSON'
   pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
+  pod 'AMPopTip'
 end
