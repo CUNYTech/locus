@@ -15,21 +15,29 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - AMPopTip (1.3.0)
+  - KCFloatingActionButton (2.0.0)
   - SwiftValidator (4.0.0)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - AMPopTip
+  - KCFloatingActionButton (from `https://github.com/kciter/KCFloatingActionButton.git`, branch `swift3.0`)
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
+  KCFloatingActionButton:
+    :branch: swift3.0
+    :git: https://github.com/kciter/KCFloatingActionButton.git
   SwiftValidator:
     :branch: master
     :git: https://github.com/jpotts18/SwiftValidator.git
 
 CHECKOUT OPTIONS:
+  KCFloatingActionButton:
+    :commit: 32c645548daa55470ca12425bc9d975e69f18a4f
+    :git: https://github.com/kciter/KCFloatingActionButton.git
   SwiftValidator:
     :commit: 2a6c23ad9efd76127f6109445515cb9780e5ad92
     :git: https://github.com/jpotts18/SwiftValidator.git
@@ -37,9 +45,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AMPopTip: b810a33c120feacafce170cc9ddcaa8ce3a8389d
+  KCFloatingActionButton: 3eab4ed6b2ef2e37d5dea82e621fe01d2277a943
   SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 3ced5afd909b6756f15ba321dbd49219205fb520
+PODFILE CHECKSUM: 31716533be77bba75019f4d534f3777c6820fba6
 
 COCOAPODS: 1.1.1
