@@ -10,4 +10,6 @@ target 'Locus' do
   pod 'SwiftyJSON'
   pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
   pod 'AMPopTip'
+  pod "KCFloatingActionButton", :git => 'https://github.com/kciter/KCFloatingActionButton.git', :branch => 'swift3.0'
 end
+
