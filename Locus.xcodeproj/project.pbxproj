@@ -21,6 +21,7 @@
 		55EBA3CD1DAD611000D4F806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3CB1DAD611000D4F806 /* LaunchScreen.storyboard */; };
 		7EC5F99C53C96631621CCDF5 /* Pods_Locus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFB4CD077F7DA3ACD60A9C7 /* Pods_Locus.framework */; };
 		E11ECDD51DDA9C5000736637 /* ImageAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11ECDD41DDA9C5000736637 /* ImageAddition.swift */; };
+		E18C8A871DF5079D00A373C0 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C8A861DF5079D00A373C0 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		55EBA3CC1DAD611000D4F806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55EBA3CE1DAD611000D4F806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E11ECDD41DDA9C5000736637 /* ImageAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAddition.swift; sourceTree = "<group>"; };
+		E18C8A861DF5079D00A373C0 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F0177EFDE5ABBC9DAB135AC2 /* Pods-Locus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Locus/Pods-Locus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,17 +96,18 @@
 		55EBA3BF1DAD611000D4F806 /* Locus */ = {
 			isa = PBXGroup;
 			children = (
+				55EBA3C01DAD611000D4F806 /* AppDelegate.swift */,
+				491A5F851DDC04B900D8B64E /* RegisterViewController.swift */,
+				491A5F871DDC04C600D8B64E /* LoginViewController.swift */,
+				55EBA3C21DAD611000D4F806 /* FirstViewController.swift */,
+				55EBA3C41DAD611000D4F806 /* SecondViewController.swift */,
 				E11ECDD41DDA9C5000736637 /* ImageAddition.swift */,
 				557C6A361DB57270007ED9CE /* LocationSearchTable.swift */,
-				55EBA3C01DAD611000D4F806 /* AppDelegate.swift */,
-				55EBA3C21DAD611000D4F806 /* FirstViewController.swift */,
 				55090BD41DBEC27D00258CE1 /* Note.swift */,
 				55090BD61DBEC28D00258CE1 /* NoteDetailViewController.swift */,
 				55090BD71DBEC28D00258CE1 /* NotesListTableViewController.swift */,
-				55EBA3C41DAD611000D4F806 /* SecondViewController.swift */,
 				55EBA3C61DAD611000D4F806 /* Main.storyboard */,
-				491A5F851DDC04B900D8B64E /* RegisterViewController.swift */,
-				491A5F871DDC04C600D8B64E /* LoginViewController.swift */,
+				E18C8A861DF5079D00A373C0 /* AccountViewController.swift */,
 				55EBA3C91DAD611000D4F806 /* Assets.xcassets */,
 				55EBA3CB1DAD611000D4F806 /* LaunchScreen.storyboard */,
 				55EBA3CE1DAD611000D4F806 /* Info.plist */,
@@ -245,6 +248,7 @@
 				557C6A371DB57270007ED9CE /* LocationSearchTable.swift in Sources */,
 				491A5F881DDC04C600D8B64E /* LoginViewController.swift in Sources */,
 				55090BD81DBEC28D00258CE1 /* NoteDetailViewController.swift in Sources */,
+				E18C8A871DF5079D00A373C0 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
