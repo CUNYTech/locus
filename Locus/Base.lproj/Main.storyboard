@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wNB-6Y-zLt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="reN-pm-wOC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -254,7 +254,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="oV9-Hl-IX4" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Second" image="F4C0072A-990F-4150-84BD-9478E4C6567D" selectedImage="second" id="Ytp-ei-eQY"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="FEF5000B-BE4C-4C43-8F5D-0AC4460976AD" selectedImage="second" id="Ytp-ei-eQY"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjO-2Y-NPl">
@@ -451,10 +451,10 @@
             </objects>
             <point key="canvasLocation" x="2036" y="-291"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="8gJ-zX-a4E">
             <objects>
-                <viewController id="reN-pm-wOC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="intro" id="reN-pm-wOC" customClass="IntroViewController" customModule="Locus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Lg-3w-vJP"/>
                         <viewControllerLayoutGuide type="bottom" id="GXm-9Y-KE5"/>
@@ -462,12 +462,68 @@
                     <view key="view" contentMode="scaleToFill" id="geA-M3-53k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yaX-s7-Jd6">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pMe-Gy-5Pc">
+                                <frame key="frameInset" minX="108" minY="50" width="159" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mLd-Zk-Y1f">
+                                <frame key="frameInset" minX="67" minY="200" width="240" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="XFz-nM-dwe">
+                                <frame key="frameInset" minX="168" minY="530" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azJ-z7-hy8">
+                                <frame key="frameInset" minX="187" minY="611" width="187.5" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.086274509803921567" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wNB-6Y-zLt" kind="popoverPresentation" identifier="Intro2Login" popoverAnchorView="azJ-z7-hy8" id="mIp-8R-Q8g">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC7-xg-mAX">
+                                <frame key="frameInset" minY="611" width="187.5" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.43137254901960786" green="0.72549019607843135" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nfb-Zb-k5E" kind="popoverPresentation" identifier="Intro2Register" popoverAnchorView="NC7-xg-mAX" id="Ahw-V5-kRT">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="azJ-z7-hy8" id="vGO-UF-vOd"/>
+                        <outlet property="pageControl" destination="XFz-nM-dwe" id="1n4-5v-85u"/>
+                        <outlet property="registerButton" destination="NC7-xg-mAX" id="tLD-yq-58g"/>
+                        <outlet property="scrollView" destination="yaX-s7-Jd6" id="hNZ-ql-8lt"/>
+                        <outlet property="textView" destination="mLd-Zk-Y1f" id="iV2-JO-Ocd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PA-5H-01n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2430" y="-291"/>
+            <point key="canvasLocation" x="-2431.1999999999998" y="-291.00449775112446"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="TRS-TB-7eQ">
@@ -648,7 +704,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F4C0072A-990F-4150-84BD-9478E4C6567D" width="30" height="30">
+        <image name="FEF5000B-BE4C-4C43-8F5D-0AC4460976AD" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGSUpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEAcI
 ERYbHCUmJysyNzo9Q0ZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlND
@@ -710,6 +766,8 @@ kguXAAAAAAAAAgEAAAAAAAAATQAAAAAAAAAAAAAAAAAAC5k
         <image name="second" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mIp-8R-Q8g"/>
+        <segue reference="Ahw-V5-kRT"/>
         <segue reference="dxU-av-r6r"/>
         <segue reference="xj2-vi-kTL"/>
         <segue reference="fNe-D5-qeg"/>
