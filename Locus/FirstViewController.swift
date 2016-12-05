@@ -111,23 +111,50 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, KCFloati
         item.buttonColor = UIColor.blue
         item.circleShadowColor = UIColor.red
         item.titleShadowColor = UIColor.blue
-        item.title = "Custom item"
-        item.handler = { item in
-            
-        }
+        item.title = "Menu"
+        item.handler = { item in }
         
-        fab.addItem(title: "I got a title")
-        fab.addItem("I got a icon", icon: UIImage(named: "icShare"))
-        fab.addItem("I got a handler", icon: UIImage(named: "icMap")) { item in
-            let alert = UIAlertController(title: "Hey", message: "I'm hungry...", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Me too", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-        fab.addItem(item: item)
-        fab.fabDelegate = self
-        
+        let fab = KCFloatingActionButton()
+        // 1
+        fab.addItem("View Map", icon: UIImage(named: "map")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "mapView") as! FirstViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
         self.view.addSubview(fab)
-        
+        // 2
+        fab.addItem("Create a memory", icon: UIImage(named: "pencil")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "entryPost") as! SecondViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+        // 3
+        fab.addItem("View Memories", icon: UIImage(named: "memories")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "identifier") as! FirstViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+        // 4
+        fab.addItem("Account", icon: UIImage(named: "account")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "account") as! AccountViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+        //5
+        fab.addItem("Logout?", icon: UIImage(named: "logout")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "login") as! LoginViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
     }
     
     func KCFABOpened(_ fab: KCFloatingActionButton) {
