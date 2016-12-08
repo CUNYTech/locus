@@ -52,7 +52,7 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
         self.view.addSubview(fab)
         // 3
         fab.addItem("View Memories", icon: UIImage(named: "memories")!, handler: { item in
-            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "identifier") as! FirstViewController
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "listView") as! NotesListTableViewController
             newVC.navigationController?.pushViewController(newVC, animated:true)
             self.navigationController?.pushViewController(newVC, animated:true)
             fab.close()
