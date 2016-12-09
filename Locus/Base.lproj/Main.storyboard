@@ -259,7 +259,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="oV9-Hl-IX4" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
+<<<<<<< HEAD
                     <tabBarItem key="tabBarItem" title="Second" image="B6D188B7-FC60-4A22-9FF9-C4749BB535C6" selectedImage="second" id="Ytp-ei-eQY"/>
+=======
+                    <tabBarItem key="tabBarItem" title="Second" image="B922E2F4-BFD2-4B0A-917D-D23598606243" selectedImage="second" id="Ytp-ei-eQY"/>
+>>>>>>> master
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjO-2Y-NPl">
@@ -288,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mX8-nh-rMQ">
-                                <rect key="frame" x="29" y="309" width="37" height="44"/>
+                                <rect key="frame" x="29" y="314" width="37" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                 <state key="normal" title="+">
@@ -301,7 +305,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-dl-Umu">
-                                <rect key="frame" x="259" y="316" width="84" height="30"/>
+                                <rect key="frame" x="263" y="328" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.25098039220000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -312,24 +316,24 @@
                                     <action selector="SaveButton:" destination="bSR-iX-9Xu" eventType="touchUpInside" id="xtg-mZ-eZF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrF-L8-GdV">
-                                <rect key="frame" x="83" y="372" width="204" height="203"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gP5-DH-Joj">
-                                <rect key="frame" x="16" y="59" width="343" height="30"/>
+                                <rect key="frame" x="16" y="78" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7VJ-dF-U4Y">
-                                <rect key="frame" x="16" y="97" width="343" height="204"/>
+                                <rect key="frame" x="16" y="116" width="343" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrF-L8-GdV">
+                                <rect key="frame" x="85" y="387" width="204" height="203"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.7343711256980896" green="0.81765609979629517" blue="0.93828004598617554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -715,7 +719,11 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="B6D188B7-FC60-4A22-9FF9-C4749BB535C6" width="30" height="30">
+=======
+        <image name="B922E2F4-BFD2-4B0A-917D-D23598606243" width="30" height="30">
+>>>>>>> master
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGU1RYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
 ERYbHCgpKi41OT1CRUhNUFUkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dO
@@ -779,6 +787,7 @@ AABXAAAAAAAAAAAAAAAAAAAL7Q
         <image name="second" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="dxU-av-r6r"/>
         <segue reference="JiQ-kV-ufc"/>
         <segue reference="qx9-Rd-3Yq"/>
@@ -786,6 +795,14 @@ AABXAAAAAAAAAAAAAAAAAAAL7Q
         <segue reference="bHO-9Z-NyQ"/>
         <segue reference="l6J-P2-fKw"/>
         <segue reference="xj2-vi-kTL"/>
+=======
+        <segue reference="mIp-8R-Q8g"/>
+        <segue reference="Ahw-V5-kRT"/>
+        <segue reference="dxU-av-r6r"/>
+        <segue reference="xj2-vi-kTL"/>
+        <segue reference="lyo-fi-Qt6"/>
+        <segue reference="bHO-9Z-NyQ"/>
+>>>>>>> master
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68235294120000001" green="0.7725490196" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
