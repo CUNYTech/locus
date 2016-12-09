@@ -67,6 +67,10 @@ class LoginViewController: UIViewController, ValidationDelegate {
                 
                 //show error alert
                 if (!self.errorCode) {
+                    let email: String = json["email"].stringValue
+                    let id = json["user_id"].intValue
+                    UserDefaults.standard.set(email, forKey: "email")
+                    UserDefaults.standard.set(id, forKey: "id")
                     self.performSegue(withIdentifier: "logged_in", sender: self)
                 } else {
                     let alert = UIAlertController(title: "Failed", message: self.message, preferredStyle: UIAlertControllerStyle.alert)

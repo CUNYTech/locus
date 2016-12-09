@@ -7,18 +7,58 @@
 //
 
 import UIKit
+import AFNetworking
+import SwiftyJSON
 import KCFloatingActionButton
 
 
 class NotesListTableViewController: UITableViewController, KCFloatingActionButtonDelegate {
-    
-    var notes: [Note] = []
-    var fab = KCFloatingActionButton()
 
+    var TableData:Array<String> = Array<String>()
+    let id = UserDefaults.standard.object(forKey: "id")
+    var fab = KCFloatingActionButton()
+    
+    func get_data(url: String) {
+        let manager = AFHTTPSessionManager()
+        manager.get(url, parameters: nil, progress: nil,
+                    success: {
+                        (task: URLSessionDataTask, response: Any!) in
+                        
+                        let jsonData = JSON(response)
+                        print (jsonData["entries"][0])
+                        /*do {
+                         json = try JSONSerialization.jsonObject(with: result, options: JSONSerialization.ReadingOptions.mutableContainers) as? Array<String>
+                         } catch {
+                         print(error)
+                         }*/
+                        let entry_list = jsonData["entries"]
+                        for i in 0 ..< entry_list.count {
+                            if let title = entry_list[i]["title"].stringValue as? String {
+                                if let entry = entry_list[i]["entry"].stringValue as? String {
+                                    self.TableData.append(title + " [" + entry + "]")
+                                }
+                            }
+                        }
+                        
+                        self.do_table_refresh()
+        },
+                    failure: {
+                        (task: URLSessionTask?, error: Error?) in
+                        print(error)
+        })
+    }
+    
+    func do_table_refresh() {
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+            return
+        })
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutFAB()
+        self.get_data(url: "http://localhost:8888/locus/v1/entries/" + String(describing: self.id!))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -95,7 +135,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return notes.count
+        return TableData.count
     }
 
     //reuses the note cells and allocates the info to them dynamically
@@ -103,9 +143,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel!.text = notes[indexPath.row].title
-
-
+        cell.textLabel!.text = TableData[indexPath.row]
         return cell
     }
     
@@ -132,7 +170,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         // delete note from array
-        notes.remove(at: indexPath.row)
+        TableData.remove(at: indexPath.row)
         //update UI to reflect the deletion
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         
@@ -166,7 +204,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier! == "showNote" {
             // Get the new view controller using segue.destinationViewController.
@@ -185,7 +223,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
             noteDetailViewController.note = note
             noteDetailViewController.title = "Create an Entry"
         }
-    }
+    }*/
  
 
 }
