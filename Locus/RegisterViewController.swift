@@ -83,6 +83,10 @@ class RegisterViewController: UIViewController, ValidationDelegate {
                     //show alerts
                     switch (self.errorCode) {
                     case false:
+                        let email: String = json["email"].stringValue
+                        //let id = json["user_id"].intValue
+                        UserDefaults.standard.set(email, forKey: "email")
+                        //UserDefaults.standard.set(id, forKey: "id")
                         //success animation
                         let alert = UIAlertController(title: "Success", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
                         let successAlert = UIAlertAction(title: "Dismiss", style: .default, handler: {
