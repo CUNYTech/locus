@@ -58,9 +58,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         if Int(currentPage) == 0{
             textView.text = "An app to visually chronologize and organize travel anecdotes for the modern explorer."
         }else if Int(currentPage) == 1{
-            textView.text = "Some reason why locus is great."
+            textView.text = "A living time capsule"
         }else if Int(currentPage) == 2{
-            textView.text = "Explain how it works."
+            textView.text = "Create diary entries, track them on a map, see all your memories laid out."
         }else{
             textView.text = "Register and start cataloging the places you've been."
         }
