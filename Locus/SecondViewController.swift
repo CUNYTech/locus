@@ -17,6 +17,7 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
     
     @IBOutlet weak var TitleTextField: UITextField!
     @IBOutlet weak var EntryTextView: UITextView!
+    @IBOutlet weak var EntryImageView: UIImageView!
     var errorCode: Bool!
     var message: String = ""
     let email = UserDefaults.standard.object(forKey: "email") as! String
