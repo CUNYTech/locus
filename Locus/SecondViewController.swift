@@ -17,10 +17,16 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
     
     @IBOutlet weak var TitleTextField: UITextField!
     @IBOutlet weak var EntryTextView: UITextView!
+    @IBOutlet weak var EntryImageView: UIImageView!
+    var newImage: UIImage!
     var errorCode: Bool!
     var message: String = ""
     let email = UserDefaults.standard.object(forKey: "email") as! String
 
+    @IBAction func ImagePicker(_ sender: Any) {
+        self.performSegue(withIdentifier: "image_picker", sender: Any?.self)
+    }
+    
     @IBAction func SaveButton(_ sender: Any) {
         //run a spinner to show a task in progress
         let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x:0, y:0, width:150, height:150)) as UIActivityIndicatorView
@@ -105,6 +111,7 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
     
         super.viewDidLoad()
         layoutFAB()
+        EntryImageView.image = newImage
         // Do any additional setup after loading the view, typically from a nib.
     }
 
