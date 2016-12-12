@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		491A5F861DDC04B900D8B64E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A5F851DDC04B900D8B64E /* RegisterViewController.swift */; };
 		491A5F881DDC04C600D8B64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A5F871DDC04C600D8B64E /* LoginViewController.swift */; };
+		49DEA7C51DFF2B1E00882EAE /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEA7C41DFF2B1E00882EAE /* EntryViewController.swift */; };
 		55090BD51DBEC27D00258CE1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090BD41DBEC27D00258CE1 /* Note.swift */; };
 		55090BD81DBEC28D00258CE1 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090BD61DBEC28D00258CE1 /* NoteDetailViewController.swift */; };
 		55090BD91DBEC28D00258CE1 /* NotesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090BD71DBEC28D00258CE1 /* NotesListTableViewController.swift */; };
@@ -30,6 +31,7 @@
 		36F6AA631C7B4F205DF38E72 /* Pods-Locus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Locus/Pods-Locus.debug.xcconfig"; sourceTree = "<group>"; };
 		491A5F851DDC04B900D8B64E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		491A5F871DDC04C600D8B64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		49DEA7C41DFF2B1E00882EAE /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		55090BD41DBEC27D00258CE1 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		55090BD61DBEC28D00258CE1 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		55090BD71DBEC28D00258CE1 /* NotesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				55EBA3C91DAD611000D4F806 /* Assets.xcassets */,
 				55EBA3CB1DAD611000D4F806 /* LaunchScreen.storyboard */,
 				55EBA3CE1DAD611000D4F806 /* Info.plist */,
+				49DEA7C41DFF2B1E00882EAE /* EntryViewController.swift */,
 			);
 			path = Locus;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				55EBA3C51DAD611000D4F806 /* SecondViewController.swift in Sources */,
 				E18C8A891DF517E200A373C0 /* IntroViewController.swift in Sources */,
 				55EBA3C11DAD611000D4F806 /* AppDelegate.swift in Sources */,
+				49DEA7C51DFF2B1E00882EAE /* EntryViewController.swift in Sources */,
 				55090BD91DBEC28D00258CE1 /* NotesListTableViewController.swift in Sources */,
 				55EBA3C31DAD611000D4F806 /* FirstViewController.swift in Sources */,
 				E11ECDD51DDA9C5000736637 /* ImageAddition.swift in Sources */,

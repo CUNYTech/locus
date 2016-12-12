@@ -13,6 +13,9 @@ import SwiftyJSON
 
 class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
     
+    @IBAction func cancelButton(segue: UIStoryboardSegue) {
+    }
+    
     var fab = KCFloatingActionButton()
     
     @IBOutlet weak var TitleTextField: UITextField!
