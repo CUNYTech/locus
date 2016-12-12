@@ -11,7 +11,7 @@ import KCFloatingActionButton
 class ImageAddition: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, KCFloatingActionButtonDelegate {
     
     @IBOutlet weak var pickedImage: UIImageView!
-    
+    var compressedJPEGImage: UIImage!
     var fab = KCFloatingActionButton()
     
     override func viewDidLoad() {
@@ -51,8 +51,16 @@ class ImageAddition: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBAction func saveaction(_ sender:
         UIButton) {
         let imageData = UIImageJPEGRepresentation(pickedImage.image!, 0.6)
-        let compressedJPEGImage = UIImage(data: imageData!)
+        compressedJPEGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!,nil, nil, nil)
+        self.performSegue(withIdentifier: "save_image", sender: Any?.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "save_image" {
+            let destination_vc = segue.destination as! SecondViewController
+            destination_vc.newImage = compressedJPEGImage
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){

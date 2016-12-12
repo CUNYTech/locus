@@ -259,7 +259,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="oV9-Hl-IX4" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Second" image="49EA83C6-C404-4FF9-9615-857A6951A75C" selectedImage="second" id="Ytp-ei-eQY"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="427380CC-8A19-4367-803F-A6D115B9885B" selectedImage="second" id="Ytp-ei-eQY"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjO-2Y-NPl">
@@ -325,9 +325,7 @@
                                     <color key="titleColor" red="0.25490196079999999" green="0.20000000000000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rHw-oe-US6" kind="popoverPresentation" popoverAnchorView="mX8-nh-rMQ" id="bHO-9Z-NyQ">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="ImagePicker:" destination="bSR-iX-9Xu" eventType="touchUpInside" id="Om4-PI-glX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -341,6 +339,7 @@
                         <outlet property="TitleTextField" destination="gP5-DH-Joj" id="vbe-89-OpI"/>
                         <outlet property="searchDisplayController" destination="by2-iD-QyS" id="LpD-CA-O5j"/>
                         <segue destination="VWI-QR-Uby" kind="show" identifier="entry_list" id="l6J-P2-fKw"/>
+                        <segue destination="rHw-oe-US6" kind="show" identifier="image_picker" id="AxY-3D-Wjs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEV-Hp-DgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,7 +459,6 @@
                                 </state>
                                 <connections>
                                     <action selector="saveaction:" destination="rHw-oe-US6" eventType="touchUpInside" id="fUv-3K-OgH"/>
-                                    <segue destination="bSR-iX-9Xu" kind="presentation" id="fNe-D5-qeg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oze-On-ww1">
@@ -479,6 +477,7 @@
                     </view>
                     <connections>
                         <outlet property="pickedImage" destination="iJP-SN-Hnw" id="eMT-Cr-75S"/>
+                        <segue destination="bSR-iX-9Xu" kind="show" identifier="save_image" id="dpw-An-LGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MH-lM-244" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -756,7 +755,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="49EA83C6-C404-4FF9-9615-857A6951A75C" width="30" height="30">
+        <image name="427380CC-8A19-4367-803F-A6D115B9885B" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTE1YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ERYbHCgpKi41Njs+QUZJVSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05T
@@ -821,9 +820,9 @@ AABQAAAAAAAAAAAAAAAAAAALvw
     <inferredMetricsTieBreakers>
         <segue reference="JiQ-kV-ufc"/>
         <segue reference="qx9-Rd-3Yq"/>
-        <segue reference="an6-Ev-kXk"/>
-        <segue reference="fNe-D5-qeg"/>
-        <segue reference="bHO-9Z-NyQ"/>
+        <segue reference="dxU-av-r6r"/>
+        <segue reference="dpw-An-LGz"/>
+        <segue reference="AxY-3D-Wjs"/>
         <segue reference="l6J-P2-fKw"/>
         <segue reference="xj2-vi-kTL"/>
     </inferredMetricsTieBreakers>
