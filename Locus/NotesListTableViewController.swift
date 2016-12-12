@@ -14,7 +14,9 @@ import KCFloatingActionButton
 
 class NotesListTableViewController: UITableViewController, KCFloatingActionButtonDelegate {
 
-    var TableData:Array<String> = Array<String>()
+    
+    var TableData = [[String]]()
+    var currentRow = 0
     let id = UserDefaults.standard.object(forKey: "id")
     var fab = KCFloatingActionButton()
     
@@ -25,21 +27,12 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
                         (task: URLSessionDataTask, response: Any!) in
                         
                         let jsonData = JSON(response)
-                        print (jsonData["entries"][0])
-                        /*do {
-                         json = try JSONSerialization.jsonObject(with: result, options: JSONSerialization.ReadingOptions.mutableContainers) as? Array<String>
-                         } catch {
-                         print(error)
-                         }*/
                         let entry_list = jsonData["entries"]
-                        for i in 0 ..< entry_list.count {
-                            if let title = entry_list[i]["title"].stringValue as? String {
-                                if let entry = entry_list[i]["entry"].stringValue as? String {
-                                    self.TableData.append(title + " [" + entry + "]")
-                                }
-                            }
-                        }
                         
+                        for i in 0 ..< entry_list.count {
+                            let entry_detail: [String] = [entry_list[i]["title"].stringValue, entry_list[i]["entry"].stringValue, entry_list[i]["image"].stringValue]
+                            self.TableData.append(entry_detail)
+                        }
                         self.do_table_refresh()
         },
                     failure: {
@@ -58,7 +51,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutFAB()
-        self.get_data(url: "http://54.159.134.142/locus/v1/entries/" + String(describing: self.id!))
+        self.get_data(url: "http://localhost:8888/locus/v1/entries/" + String(describing: self.id!))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -143,8 +136,21 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel!.text = TableData[indexPath.row]
+        cell.textLabel!.text = TableData[indexPath.row][0]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentIndexPath = tableView.indexPathForSelectedRow
+        currentRow = (currentIndexPath?.row)!
+        self.performSegue(withIdentifier: "show_entry", sender: Any?.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "show_entry") {
+            let destination = segue.destination as! EntryViewController
+            destination.detail = TableData[currentRow]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

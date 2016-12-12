@@ -1,27 +1,32 @@
 //
-//  AccountViewController.swift
+//  EntryViewController.swift
 //  Locus
 //
-//  Created by Nishat Anjum on 12/4/16.
+//  Created by Vincent Liu on 12/12/16.
 //  Copyright © 2016 Elizabeth Kelly. All rights reserved.
 //
 
 import UIKit
 import KCFloatingActionButton
 
-class AccountViewController: UIViewController, KCFloatingActionButtonDelegate {
-    
-    var fab = KCFloatingActionButton()
+class EntryViewController: UIViewController, KCFloatingActionButtonDelegate {
 
+    var fab = KCFloatingActionButton()
+    
+    var detail: [String] = []
+    @IBOutlet weak var EntryImage: UIImageView!
+    @IBOutlet weak var EntryText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutFAB()
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        layoutFAB()
+        let text = detail[0] + "\n" + detail[1]
+        let imageData = Data(base64Encoded: detail[2], options: .ignoreUnknownCharacters)
+        if imageData != nil {
+            EntryImage.image = UIImage(data: imageData!)
+        }
+        EntryText.text = text
     }
     
     func layoutFAB() {
@@ -81,6 +86,11 @@ class AccountViewController: UIViewController, KCFloatingActionButtonDelegate {
     
     func KCFABClosed(_ fab: KCFloatingActionButton) {
         print("FAB Closed")
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 
