@@ -18,7 +18,7 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
     @IBOutlet weak var TitleTextField: UITextField!
     @IBOutlet weak var EntryTextView: UITextView!
     @IBOutlet weak var EntryImageView: UIImageView!
-    var newImage: UIImage!
+    var newImage: UIImage! = nil
     var errorCode: Bool!
     var message: String = ""
     let email = UserDefaults.standard.object(forKey: "email") as! String
@@ -32,7 +32,7 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
         let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x:0, y:0, width:150, height:150)) as UIActivityIndicatorView
         spinner.startAnimating()
         
-        let urlString = "http://localhost:8888/locus/v1/entries"
+        let urlString = "http://54.159.134.142/locus/v1/entries"
         let dictionary = [
             "email": self.email,
             "title": self.TitleTextField.text!,
@@ -56,48 +56,97 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
         manager.responseSerializer = AFHTTPResponseSerializer()
         //stop the spinner
         spinner.stopAnimating()
-        manager.post(urlString, parameters: parameters, progress: nil,
-                     success:
-            {
-                (task: URLSessionTask, response: Any!) in
-                
-                //stop the spinner
-                spinner.stopAnimating()
-                let result = NSString(data: (response as! NSData) as Data, encoding: String.Encoding.utf8.rawValue)!
-                print(result)
-                
-                //parse json with SwiftyJSON
-                let json = JSON(data: response as! Data)
-                self.errorCode = json["error"].bool!
-                self.message = json["message"].stringValue
-                
-                //show alerts
-                switch (self.errorCode) {
-                case false:
-                    //success animation
-                    let alert = UIAlertController(title: "Success", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
-                    let successAlert = UIAlertAction(title: "Dismiss", style: .default, handler: {
-                        action in self.performSegue(withIdentifier: "entry_list", sender: self)
-                    })
-                    alert.addAction(successAlert)
-                    self.present(alert, animated: true, completion: nil)
-                    break
-                case true:
-                    //error message
-                    let alert = UIAlertController(title: "Failed", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
-                    let failedAlert = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
-                    alert.addAction(failedAlert)
-                    self.present(alert, animated: true, completion: nil)
-                    break
-                default:
-                    ()
-                }
-                
-        },
-                     failure:
-            {
-                (task: URLSessionDataTask?, error: Error?) in
-        })
+        if (newImage == nil) {
+            manager.post(urlString, parameters: parameters, progress: nil,
+                         success:
+                {
+                    (task: URLSessionTask, response: Any!) in
+                    
+                    //stop the spinner
+                    spinner.stopAnimating()
+                    let result = NSString(data: (response as! NSData) as Data, encoding: String.Encoding.utf8.rawValue)!
+                    print(result)
+                    
+                    //parse json with SwiftyJSON
+                    let json = JSON(data: response as! Data)
+                    self.errorCode = json["error"].bool!
+                    self.message = json["message"].stringValue
+                    
+                    //show alerts
+                    switch (self.errorCode) {
+                    case false:
+                        //success animation
+                        let alert = UIAlertController(title: "Success", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                        let successAlert = UIAlertAction(title: "Dismiss", style: .default, handler: {
+                            action in self.performSegue(withIdentifier: "entry_list", sender: self)
+                        })
+                        alert.addAction(successAlert)
+                        self.present(alert, animated: true, completion: nil)
+                        break
+                    case true:
+                        //error message
+                        let alert = UIAlertController(title: "Failed", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                        let failedAlert = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                        alert.addAction(failedAlert)
+                        self.present(alert, animated: true, completion: nil)
+                        break
+                    default:
+                        ()
+                    }
+                    
+            },
+                         failure:
+                {
+                    (task: URLSessionDataTask?, error: Error?) in
+            })
+        } else {
+            let imageName = UUID().uuidString
+            let imageData = UIImageJPEGRepresentation(newImage!, 0.6)
+            manager.post(urlString, parameters: parameters, constructingBodyWith: { (formData: AFMultipartFormData!) -> Void in
+                formData.appendPart(withFileData: imageData!, name: "image", fileName: imageName, mimeType: "image/jpeg") },
+                         progress: nil,
+                         success:
+                {
+                    (task: URLSessionTask, response: Any!) in
+                    
+                    //stop the spinner
+                    spinner.stopAnimating()
+                    let result = NSString(data: (response as! NSData) as Data, encoding: String.Encoding.utf8.rawValue)!
+                    print(result)
+                    
+                    //parse json with SwiftyJSON
+                    let json = JSON(data: response as! Data)
+                    self.errorCode = json["error"].bool!
+                    self.message = json["message"].stringValue
+                    
+                    //show alerts
+                    switch (self.errorCode) {
+                    case false:
+                        //success animation
+                        let alert = UIAlertController(title: "Success", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                        let successAlert = UIAlertAction(title: "Dismiss", style: .default, handler: {
+                            action in self.performSegue(withIdentifier: "entry_list", sender: self)
+                        })
+                        alert.addAction(successAlert)
+                        self.present(alert, animated: true, completion: nil)
+                        break
+                    case true:
+                        //error message
+                        let alert = UIAlertController(title: "Failed", message: self.message, preferredStyle: UIAlertControllerStyle.alert)
+                        let failedAlert = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                        alert.addAction(failedAlert)
+                        self.present(alert, animated: true, completion: nil)
+                        break
+                    default:
+                        ()
+                    }
+                    
+            },
+                         failure:
+                {
+                    (task: URLSessionDataTask?, error: Error?) in
+            })
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

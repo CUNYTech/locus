@@ -42,7 +42,7 @@ class RegisterViewController: UIViewController, ValidationDelegate {
             let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x:0, y:0, width:150, height:150)) as UIActivityIndicatorView
             spinner.startAnimating()
             
-            let urlString = "http://localhost:8888/locus/v1/register"
+            let urlString = "http://54.159.134.142/locus/v1/register"
             let dictionary = [
                 "email": self.EmailTextField.text!,
                 "password": self.PasswordTextField.text!

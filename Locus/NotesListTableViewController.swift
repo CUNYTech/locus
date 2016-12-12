@@ -58,7 +58,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutFAB()
-        self.get_data(url: "http://localhost:8888/locus/v1/entries/" + String(describing: self.id!))
+        self.get_data(url: "http://54.159.134.142/locus/v1/entries/" + String(describing: self.id!))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
