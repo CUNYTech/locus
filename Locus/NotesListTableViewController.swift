@@ -44,7 +44,7 @@ class NotesListTableViewController: UITableViewController, KCFloatingActionButto
         },
                     failure: {
                         (task: URLSessionTask?, error: Error?) in
-                        print(error)
+                        print("error: \(error)")
         })
     }
     
