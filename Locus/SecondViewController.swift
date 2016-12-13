@@ -13,6 +13,9 @@ import SwiftyJSON
 
 class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
     
+    @IBAction func cancelButton(segue: UIStoryboardSegue) {
+    }
+    
     var fab = KCFloatingActionButton()
     
     @IBOutlet weak var TitleTextField: UITextField!
@@ -161,6 +164,10 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
         super.viewDidLoad()
         layoutFAB()
         EntryImageView.image = newImage
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
