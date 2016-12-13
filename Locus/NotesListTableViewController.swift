@@ -14,7 +14,6 @@ import KCFloatingActionButton
 
 class NotesListTableViewController: UITableViewController, KCFloatingActionButtonDelegate {
 
-    
     var TableData = [[String]]()
     var currentRow = 0
     let id = UserDefaults.standard.object(forKey: "id")

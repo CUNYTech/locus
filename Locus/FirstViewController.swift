@@ -31,7 +31,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, KCFloati
         super.viewDidLoad()
         
         layoutFAB()
-        
+        self.tabBarController?.tabBar.isHidden = true
+
         mapView.delegate = self
         
         self.locationManager.delegate = self
