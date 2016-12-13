@@ -74,18 +74,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y0g-jj-HWK" id="l28-tT-HAl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="isu-bN-rK9">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i17-uM-URq">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -160,7 +160,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zcE-TR-Jfq" id="kzG-da-WuY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -235,6 +235,7 @@
         <!--Note Detail View Controller-->
         <scene sceneID="z8k-GB-Bc1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yS-iJ-UAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="entryNote" hidesBottomBarWhenPushed="YES" id="cZ0-iZ-ntT" customClass="NoteDetailViewController" customModule="Locus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ljQ-Go-GCp"/>
@@ -292,7 +293,6 @@
                         <outlet property="titleTextField" destination="Dzg-J2-L3b" id="W64-e6-ku7"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2yS-iJ-UAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3784.8000000000002" y="482.60869565217394"/>
         </scene>
@@ -301,7 +301,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="oV9-Hl-IX4" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Second" image="FEC050EC-A4D0-45B7-BEDE-68481300E9DA" selectedImage="second" id="Ytp-ei-eQY"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="FB175856-1822-43D8-94B7-3798F4EC2BF6" selectedImage="second" id="Ytp-ei-eQY"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjO-2Y-NPl">
@@ -778,7 +778,6 @@
         <!--Navigation Controller-->
         <scene sceneID="D8p-gj-1yl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Job-Pz-nYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6qt-mI-pD0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="joY-fP-L5I" userLabel="Create Entry">
@@ -793,12 +792,14 @@
                         <segue destination="bSR-iX-9Xu" kind="relationship" relationship="rootViewController" id="Wok-lU-Ei2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Job-Pz-nYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2975.1999999999998" y="-291.00449775112446"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8B5-yw-Vif">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxe-J7-6ux" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="crh-lF-gkr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LGN-4t-BCH">
@@ -810,7 +811,6 @@
                         <segue destination="cZ0-iZ-ntT" kind="relationship" relationship="rootViewController" id="5I2-OW-9aT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxe-J7-6ux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2845.5999999999999" y="482.60869565217394"/>
         </scene>
@@ -835,62 +835,63 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FEC050EC-A4D0-45B7-BEDE-68481300E9DA" width="30" height="30">
+        <image name="FB175856-1822-43D8-94B7-3798F4EC2BF6" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGTE1YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
-ERYbHCgpKi41Njs+QUZJVSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05T
-Q29sb3KAEBIAwAAAgAKADtISCRMVWk5TLm9iamVjdHOhFIADgA3SEgkXGqIYGYAEgAWADBAA1x0JHh8g
-ISIjJCUmGxsnVk5TU2l6ZVlOU1BERkRhdGFfEBBOU0NvbG9yU3BhY2VOYW1lXxAZTlNJbnRlcm5hbExh
-eW91dERpcmVjdGlvbl8QD05TQml0c1BlclNhbXBsZVxOU0NvbG9yU3BhY2WABoALgAqAB4AIWHszMCwg
-MzB9XxAZTlNDYWxpYnJhdGVkUkdCQ29sb3JTcGFjZdIrCSwtVE5TSUQQAYAJ0i8wMTJaJGNsYXNzbmFt
-ZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2WiMzRcTlNDb2xvclNwYWNlWE5TT2JqZWN0TxEJdyVQREYtMS4z
-CiXE5fLl66fzoNDExgo0IDAgb2JqCjw8IC9MZW5ndGggNSAwIFIgL0ZpbHRlciAvRmxhdGVEZWNvZGUg
-Pj4Kc3RyZWFtCngBK1QIVChU0HcuNlRILlYwAMPiZAUjEwUzhVwQBUQ5QDaUMgNywHI5ChkKaVoKgQDb
-Pg44CmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iago1MwplbmRvYmoKMiAwIG9iago8PCAvVHlwZSAvUGFn
-ZSAvUGFyZW50IDMgMCBSIC9SZXNvdXJjZXMgNiAwIFIgL0NvbnRlbnRzIDQgMCBSID4+CmVuZG9iago2
-IDAgb2JqCjw8IC9Qcm9jU2V0IFsgL1BERiBdIC9Db2xvclNwYWNlIDw8IC9DczEgNyAwIFIgPj4gPj4K
-ZW5kb2JqCjggMCBvYmoKPDwgL0xlbmd0aCA5IDAgUiAvTiAzIC9BbHRlcm5hdGUgL0RldmljZVJHQiAv
-RmlsdGVyIC9GbGF0ZURlY29kZSA+PgpzdHJlYW0KeAGFVd9v21QUPolvUqQWPyBYR4eKxa9VU1u5Gxqt
-xgZJk6XtShal6dgqJOQ6N4mpGwfb6baqT3uBNwb8AUDZAw9IPCENBmJ72fbAtElThyqqSUh76MQPISbt
-BVXhu3ZiJ1PEXPX6yznfOec7517bRD1fabWaGVWIlquunc8klZOnFpSeTYrSs9RLA9Sr6U4tkcvNEi7B
-FffO6+EdigjL7ZHu/k72I796i9zRiSJPwG4VHX0Z+AxRzNRrtksUvwf7+Gm3BtzzHPDTNgQCqwKXfZwS
-eNHHJz1OIT8JjtAq6xWtCLwGPLzYZi+3YV8DGMiT4VVuG7oiZpGzrZJhcs/hL49xtzH/Dy6bdfTsXYNY
-+5yluWO4D4neK/ZUvok/17X0HPBLsF+vuUlhfwX4j/rSfAJ4H1H0qZJ9dN7nR19frRTeBt4Fe9FwpwtN
-+2p1MXscGLHR9SXrmMgjONd1ZxKzpBeA71b4tNhj6JGoyFNp4GHgwUp9qplfmnFW5oTdy7NamcwCI49k
-v6fN5IAHgD+0rbyoBc3SOjczohbyS1drbq6pQdqumllRC/0ymTtej8gpbbuVwpQfyw66dqEZyxZKxtHp
-Jn+tZnpnEdrYBbueF9qQn93S7HQGGHnYP7w6L+YGHNtd1FJitqPAR+hERCNOFi1i1alKO6RQnjKUxL1G
-NjwlMsiEhcPLYTEiT9ISbN15OY/jx4SMshe9LaJRpTvHr3C/ybFYP1PZAfwfYrPsMBtnE6SwN9ib7AhL
-wTrBDgUKcm06FSrTfSj187xPdVQWOk5Q8vxAfSiIUc7Z7xr6zY/+hpqwSyv0I0/QMTRb7RMgBxNodTfS
-Pqdraz/sDjzKBrv4zu2+a2t0/HHzjd2Lbcc2sG7GtsL42K+xLfxtUgI7YHqKlqHK8HbCCXgjHT1cAdMl
-Detv4FnQ2lLasaOl6vmB0CMmwT/IPszSueHQqv6i/qluqF+oF9TfO2qEGTumJH0qfSv9KH0nfS/9TIp0
-Wboi/SRdlb6RLgU5u++9nyXYe69fYRPdil1o1WufNSdTTsp75BfllPy8/LI8G7AUuV8ek6fkvfDsCfbN
-DP0dvRh0CrNqTbV7LfEEGDQPJQadBtfGVMWEq3QWWdufk6ZSNsjG2PQjp3ZcnOWWing6noonSInvi0/E
-x+IzAreevPhe+CawpgP1/pMTMDo64G0sTCXIM+KdOnFWRfQKdJvQzV1+Bt8OokmrdtY2yhVX2a+qrykJ
-fMq4Ml3VR4cVzTQVz+UoNne4vcKLoyS+gyKO6EHe+75Fdt0Mbe5bRIf/wjvrVmhbqBN97RD1vxrahvBO
-fOYzoosH9bq94uejSOQGkVM6sN/7HelL4t10t9F4gPdVzydEOx83Gv+uNxo7XyL/FtFl8z9ZAHF4CmVu
-ZHN0cmVhbQplbmRvYmoKOSAwIG9iagoxMDQ3CmVuZG9iago3IDAgb2JqClsgL0lDQ0Jhc2VkIDggMCBS
-IF0KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9NZWRpYUJveCBbMCAwIDMwIDMwXSAvQ291
-bnQgMSAvS2lkcyBbIDIgMCBSIF0gPj4KZW5kb2JqCjEwIDAgb2JqCjw8IC9UeXBlIC9DYXRhbG9nIC9Q
-YWdlcyAzIDAgUiA+PgplbmRvYmoKMTEgMCBvYmoKKE5ldyBJbWFnZSkKZW5kb2JqCjEyIDAgb2JqCihN
-YWMgT1MgWCAxMC4xMCBRdWFydHogUERGQ29udGV4dCkKZW5kb2JqCjEzIDAgb2JqCihBbGV4IFJhZnRp
-cykKZW5kb2JqCjE0IDAgb2JqCihPcGFjaXR5KQplbmRvYmoKMTUgMCBvYmoKKEQ6MjAxNDA3MzEyMzI4
-NTFaMDAnMDAnKQplbmRvYmoKMSAwIG9iago8PCAvVGl0bGUgMTEgMCBSIC9BdXRob3IgMTMgMCBSIC9Q
-cm9kdWNlciAxMiAwIFIgL0NyZWF0b3IgMTQgMCBSIC9DcmVhdGlvbkRhdGUKMTUgMCBSIC9Nb2REYXRl
-IDE1IDAgUiA+PgplbmRvYmoKeHJlZgowIDE2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMTgyNiAw
-MDAwMCBuIAowMDAwMDAwMTY3IDAwMDAwIG4gCjAwMDAwMDE1MTggMDAwMDAgbiAKMDAwMDAwMDAyMiAw
-MDAwMCBuIAowMDAwMDAwMTQ5IDAwMDAwIG4gCjAwMDAwMDAyNDcgMDAwMDAgbiAKMDAwMDAwMTQ4MyAw
-MDAwMCBuIAowMDAwMDAwMzE1IDAwMDAwIG4gCjAwMDAwMDE0NjMgMDAwMDAgbiAKMDAwMDAwMTU5OSAw
-MDAwMCBuIAowMDAwMDAxNjQ5IDAwMDAwIG4gCjAwMDAwMDE2NzcgMDAwMDAgbiAKMDAwMDAwMTcyOCAw
-MDAwMCBuIAowMDAwMDAxNzU4IDAwMDAwIG4gCjAwMDAwMDE3ODQgMDAwMDAgbiAKdHJhaWxlcgo8PCAv
-U2l6ZSAxNiAvUm9vdCAxMCAwIFIgL0luZm8gMSAwIFIgL0lEIFsgPGNmMGUwZDdjNzlhMDUxMjRjODgy
-ODdkYjRiYjJiYzI1Pgo8Y2YwZTBkN2M3OWEwNTEyNGM4ODI4N2RiNGJiMmJjMjU+IF0gPj4Kc3RhcnR4
-cmVmCjE5NDYKJSVFT0YK0i8wNzhdTlNQREZJbWFnZVJlcKM5OjRdTlNQREZJbWFnZVJlcFpOU0ltYWdl
-UmVw0i8wPD1XTlNBcnJheaI8NNIvMD9AXk5TTXV0YWJsZUFycmF5oz88NNNCIglDREVXTlNXaGl0ZUQw
-IDAAEAOAD9IvMEdIV05TQ29sb3KiRzTSLzBKS1dOU0ltYWdloko0XxAPTlNLZXllZEFyY2hpdmVy0U5P
-VHJvb3SAAQAIABEAGgAjAC0AMgA3AEsAUQBaAGEAbgB1AH0AfwCEAIYAiACNAJgAmgCcAJ4AowCmAKgA
-qgCsAK4AvQDEAM4A4QD9AQ8BHAEeASABIgEkASYBLwFLAVABVQFXAVkBXgFpAXIBfwGCAY8BmAsTCxgL
-JgsqCzgLQwtIC1ALUwtYC2cLawtyC3oLfwuBC4MLiAuQC5MLmAugC6MLtQu4C70AAAAAAAACAQAAAAAA
-AABQAAAAAAAAAAAAAAAAAAALvw
+YnBsaXN0MDDUAQIDBAUGU1RYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
+ERYbHCgpKi41OT1CRUhNUFUkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dO
+U0NvbG9ygBESAMAAAIACgA/SEgkTFVpOUy5vYmplY3RzoRSAA4AO0hIJFxqiGBmABIAFgA0QANcdCR4f
+ICEiIyQlJhsbJ1ZOU1NpemVZTlNQREZEYXRhXxAQTlNDb2xvclNwYWNlTmFtZV8QGU5TSW50ZXJuYWxM
+YXlvdXREaXJlY3Rpb25fEA9OU0JpdHNQZXJTYW1wbGVcTlNDb2xvclNwYWNlgAaADIAKgAeACFh7MzAs
+IDMwfV8QGU5TQ2FsaWJyYXRlZFJHQkNvbG9yU3BhY2XSKwksLVROU0lEEAGACdIvMDEyWiRjbGFzc25h
+bWVYJGNsYXNzZXNcTlNDb2xvclNwYWNlojM0XE5TQ29sb3JTcGFjZVhOU09iamVjdNI2CTc4V05TLmRh
+dGFPEQl3JVBERi0xLjMKJcTl8uXrp/Og0MTGCjQgMCBvYmoKPDwgL0xlbmd0aCA1IDAgUiAvRmlsdGVy
+IC9GbGF0ZURlY29kZSA+PgpzdHJlYW0KeAErVAhUKFTQdy42VEguVjAAw+JkBSMTBTOFXBAFRDlANpQy
+A3LAcjkKGQppWgqBANs+DjgKZW5kc3RyZWFtCmVuZG9iago1IDAgb2JqCjUzCmVuZG9iagoyIDAgb2Jq
+Cjw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMyAwIFIgL1Jlc291cmNlcyA2IDAgUiAvQ29udGVudHMgNCAw
+IFIgPj4KZW5kb2JqCjYgMCBvYmoKPDwgL1Byb2NTZXQgWyAvUERGIF0gL0NvbG9yU3BhY2UgPDwgL0Nz
+MSA3IDAgUiA+PiA+PgplbmRvYmoKOCAwIG9iago8PCAvTGVuZ3RoIDkgMCBSIC9OIDMgL0FsdGVybmF0
+ZSAvRGV2aWNlUkdCIC9GaWx0ZXIgL0ZsYXRlRGVjb2RlID4+CnN0cmVhbQp4AYVV32/bVBQ+iW9SpBY/
+IFhHh4rFr1VTW7kbGq3GBkmTpe1KFqXp2Cok5Do3iakbB9vptqpPe4E3BvwBQNkDD0g8IQ0GYnvZ9sC0
+SVOHKqpJSHvoxA8hJu0FVeG7dmInU8Rc9frLOd855zvnXttEPV9ptZoZVYiWq66dzySVk6cWlJ5NitKz
+1EsD1KvpTi2Ry80SLsEV987r4R2KCMvtke7+TvYjv3qL3NGJIk/AbhUdfRn4DFHM1Gu2SxS/B/v4abcG
+3PMc8NM2BAKrApd9nBJ40ccnPU4hPwmO0CrrFa0IvAY8vNhmL7dhXwMYyJPhVW4buiJmkbOtkmFyz+Ev
+j3G3Mf8PLpt19Oxdg1j7nKW5Y7gPid4r9lS+iT/XtfQc8EuwX6+5SWF/BfiP+tJ8AngfUfSpkn103udH
+X1+tFN4G3gV70XCnC037anUxexwYsdH1JeuYyCM413VnErOkF4DvVvi02GPokajIU2ngYeDBSn2qmV+a
+cVbmhN3Ls1qZzAIjj2S/p83kgAeAP7StvKgFzdI6NzOiFvJLV2turqlB2q6aWVEL/TKZO16PyCltu5XC
+lB/LDrp2oRnLFkrG0ekmf61memcR2tgFu54X2pCf3dLsdAYYedg/vDov5gYc213UUmK2o8BH6EREI04W
+LWLVqUo7pFCeMpTEvUY2PCUyyISFw8thMSJP0hJs3Xk5j+PHhIyyF70tolGlO8evcL/JsVg/U9kB/B9i
+s+wwG2cTpLA32JvsCEvBOsEOBQpybToVKtN9KPXzvE91VBY6TlDy/EB9KIhRztnvGvrNj/6GmrBLK/Qj
+T9AxNFvtEyAHE2h1N9I+p2trP+wOPMoGu/jO7b5ra3T8cfON3Yttxzawbsa2wvjYr7Et/G1SAjtgeoqW
+ocrwdsIJeCMdPVwB0yUN62/gWdDaUtqxo6Xq+YHQIybBP8g+zNK54dCq/qL+qW6oX6gX1N87aoQZO6Yk
+fSp9K/0ofSd9L/1MinRZuiL9JF2VvpEuBTm7772fJdh7r19hE92KXWjVa581J1NOynvkF+WU/Lz8sjwb
+sBS5Xx6Tp+S98OwJ9s0M/R29GHQKs2pNtXst8QQYNA8lBp0G18ZUxYSrdBZZ25+TplI2yMbY9COndlyc
+5ZaKeDqeiidIie+LT8TH4jMCt568+F74JrCmA/X+kxMwOjrgbSxMJcgz4p06cVZF9Ap0m9DNXX4G3w6i
+Sat21jbKFVfZr6qvKQl8yrgyXdVHhxXNNBXP5Sg2d7i9woujJL6DIo7oQd77vkV23Qxt7ltEh//CO+tW
+aFuoE33tEPW/GtqG8E585jOiiwf1ur3i56NI5AaRUzqw3/sd6Uvi3XS30XiA91XPJ0Q7Hzca/643Gjtf
+Iv8W0WXzP1kAcXgKZW5kc3RyZWFtCmVuZG9iago5IDAgb2JqCjEwNDcKZW5kb2JqCjcgMCBvYmoKWyAv
+SUNDQmFzZWQgOCAwIFIgXQplbmRvYmoKMyAwIG9iago8PCAvVHlwZSAvUGFnZXMgL01lZGlhQm94IFsw
+IDAgMzAgMzBdIC9Db3VudCAxIC9LaWRzIFsgMiAwIFIgXSA+PgplbmRvYmoKMTAgMCBvYmoKPDwgL1R5
+cGUgL0NhdGFsb2cgL1BhZ2VzIDMgMCBSID4+CmVuZG9iagoxMSAwIG9iagooTmV3IEltYWdlKQplbmRv
+YmoKMTIgMCBvYmoKKE1hYyBPUyBYIDEwLjEwIFF1YXJ0eiBQREZDb250ZXh0KQplbmRvYmoKMTMgMCBv
+YmoKKEFsZXggUmFmdGlzKQplbmRvYmoKMTQgMCBvYmoKKE9wYWNpdHkpCmVuZG9iagoxNSAwIG9iagoo
+RDoyMDE0MDczMTIzMjg1MVowMCcwMCcpCmVuZG9iagoxIDAgb2JqCjw8IC9UaXRsZSAxMSAwIFIgL0F1
+dGhvciAxMyAwIFIgL1Byb2R1Y2VyIDEyIDAgUiAvQ3JlYXRvciAxNCAwIFIgL0NyZWF0aW9uRGF0ZQox
+NSAwIFIgL01vZERhdGUgMTUgMCBSID4+CmVuZG9iagp4cmVmCjAgMTYKMDAwMDAwMDAwMCA2NTUzNSBm
+IAowMDAwMDAxODI2IDAwMDAwIG4gCjAwMDAwMDAxNjcgMDAwMDAgbiAKMDAwMDAwMTUxOCAwMDAwMCBu
+IAowMDAwMDAwMDIyIDAwMDAwIG4gCjAwMDAwMDAxNDkgMDAwMDAgbiAKMDAwMDAwMDI0NyAwMDAwMCBu
+IAowMDAwMDAxNDgzIDAwMDAwIG4gCjAwMDAwMDAzMTUgMDAwMDAgbiAKMDAwMDAwMTQ2MyAwMDAwMCBu
+IAowMDAwMDAxNTk5IDAwMDAwIG4gCjAwMDAwMDE2NDkgMDAwMDAgbiAKMDAwMDAwMTY3NyAwMDAwMCBu
+IAowMDAwMDAxNzI4IDAwMDAwIG4gCjAwMDAwMDE3NTggMDAwMDAgbiAKMDAwMDAwMTc4NCAwMDAwMCBu
+IAp0cmFpbGVyCjw8IC9TaXplIDE2IC9Sb290IDEwIDAgUiAvSW5mbyAxIDAgUiAvSUQgWyA8Y2YwZTBk
+N2M3OWEwNTEyNGM4ODI4N2RiNGJiMmJjMjU+CjxjZjBlMGQ3Yzc5YTA1MTI0Yzg4Mjg3ZGI0YmIyYmMy
+NT4gXSA+PgpzdGFydHhyZWYKMTk0NgolJUVPRgqAC9IvMDo7XU5TTXV0YWJsZURhdGGjOjw0Vk5TRGF0
+YdIvMD4/XU5TUERGSW1hZ2VSZXCjQEE0XU5TUERGSW1hZ2VSZXBaTlNJbWFnZVJlcNIvMENEV05TQXJy
+YXmiQzTSLzBGR15OU011dGFibGVBcnJheaNGQzTTSSIJSktMV05TV2hpdGVEMCAwABADgBDSLzBOT1dO
+U0NvbG9yok400i8wUVJXTlNJbWFnZaJRNF8QD05TS2V5ZWRBcmNoaXZlctFVVlRyb290gAEACAARABoA
+IwAtADIANwBMAFIAWwBiAG8AdgB+AIAAhQCHAIkAjgCZAJsAnQCfAKQApwCpAKsArQCvAL4AxQDPAOIA
+/gEQAR0BHwEhASMBJQEnATABTAFRAVYBWAFaAV8BagFzAYABgwGQAZkBngGmCyELIwsoCzYLOgtBC0YL
+VAtYC2YLcQt2C34LgQuGC5ULmQugC6gLrQuvC7ELtgu+C8ELxgvOC9EL4wvmC+sAAAAAAAACAQAAAAAA
+AABXAAAAAAAAAAAAAAAAAAAL7Q
 </mutableData>
         </image>
         <image name="Logo" width="189" height="200"/>
@@ -898,12 +899,12 @@ AABQAAAAAAAAAAAAAAAAAAALvw
         <image name="second" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="6V4-dl-qKk"/>
+        <segue reference="l6J-P2-fKw"/>
+        <segue reference="Wok-lU-Ei2"/>
         <segue reference="an6-Ev-kXk"/>
         <segue reference="mIp-8R-Q8g"/>
         <segue reference="Ahw-V5-kRT"/>
-        <segue reference="Wok-lU-Ei2"/>
-        <segue reference="l6J-P2-fKw"/>
-        <segue reference="6d3-Gb-n6P"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68235294120000001" green="0.7725490196" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
