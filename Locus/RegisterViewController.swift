@@ -145,8 +145,6 @@ class RegisterViewController: UIViewController, ValidationDelegate {
         validator.registerField(PasswordTextField, rules: [RequiredRule(), PasswordRule(message: "Password requirements not met")])
         
         self.navigationController?.isNavigationBarHidden = true
-
-        
     }
 
     override func didReceiveMemoryWarning() {
