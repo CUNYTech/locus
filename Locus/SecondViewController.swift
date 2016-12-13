@@ -104,7 +104,7 @@ class SecondViewController: UIViewController, KCFloatingActionButtonDelegate {
             })
         } else {
             let imageName = UUID().uuidString
-            let imageData = UIImageJPEGRepresentation(newImage!, 0.6)
+            let imageData = UIImageJPEGRepresentation(newImage!, 0.1)
             manager.post(urlString, parameters: parameters, constructingBodyWith: { (formData: AFMultipartFormData!) -> Void in
                 formData.appendPart(withFileData: imageData!, name: "image", fileName: imageName, mimeType: "image/jpeg") },
                          progress: nil,

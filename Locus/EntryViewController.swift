@@ -21,12 +21,26 @@ class EntryViewController: UIViewController, KCFloatingActionButtonDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         layoutFAB()
-        let text = detail[0] + "\n" + detail[1]
         let imageData = Data(base64Encoded: detail[2], options: .ignoreUnknownCharacters)
         if imageData != nil {
             EntryImage.image = UIImage(data: imageData!)
         }
-        EntryText.text = text
+        
+        let largeFont = UIFont(name: "Zapfino", size: 16)
+        let smallFont = UIFont(name: "Didot-Italic", size: 14)
+        
+        let yourAttributes = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: largeFont]
+        let yourOtherAttributes = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: smallFont]
+        
+        let titleText = NSMutableAttributedString(string: detail[0], attributes: yourAttributes)
+        let detailText = NSMutableAttributedString(string: "\n\n\(detail[1])", attributes: yourOtherAttributes)
+
+        let attrText = NSMutableAttributedString()
+        
+        attrText.append(titleText)
+        attrText.append(detailText)
+        
+        EntryText.attributedText = attrText
     }
     
     func layoutFAB() {
