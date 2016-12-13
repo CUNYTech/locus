@@ -156,6 +156,7 @@
 				TargetAttributes = {
 					55EBA3BC1DAD611000D4F806 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XGRPCUVLML;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -382,7 +383,7 @@
 			baseConfigurationReference = 36F6AA631C7B4F205DF38E72 /* Pods-Locus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XGRPCUVLML;
 				INFOPLIST_FILE = Locus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -398,7 +399,7 @@
 			baseConfigurationReference = F0177EFDE5ABBC9DAB135AC2 /* Pods-Locus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XGRPCUVLML;
 				INFOPLIST_FILE = Locus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
